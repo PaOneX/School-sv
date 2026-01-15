@@ -6,10 +6,9 @@ import java.util.List;
 
 public interface StudentService {
 
-    String getName();
-    String getVersion();
-//    void addStudent(StudentDTO studentDTO);
-//    void updateStudent(StudentDTO studentDTO);
-//    void deleteStudent(Integer id);
-//    List<StudentDTO> getStudents();
+    void addStudent(StudentDTO studentDTO);
+    void updateStudent(StudentDTO studentDTO);
+    void deleteStudent(Integer id);
+    List<StudentDTO> getStudents();
+    List<StudentDTO> getStudentsByName(String name);
 }
