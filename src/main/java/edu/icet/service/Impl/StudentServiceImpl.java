@@ -9,38 +9,54 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
 
     final StudentRepository repository;
     final ModelMapper mapper;
+
     @Override
     public void addStudent(StudentDTO studentDTO) {
-        StudentEntity studentEntity = mapper.map(studentDTO,StudentEntity.class);
+        StudentEntity studentEntity = mapper.map(studentDTO, StudentEntity.class);
         repository.save(studentEntity);
     }
 
     @Override
     public void updateStudent(StudentDTO studentDTO) {
-
+        repository.save(mapper.map(studentDTO, StudentEntity.class));
     }
 
     @Override
     public void deleteStudent(Integer id) {
-
+        repository.deleteById(id);
     }
 
     @Override
     public List<StudentDTO> getStudents() {
-        return List.of();
+
+        List<StudentEntity> studentEntities = repository.findAll();
+        ArrayList<StudentDTO> studentDTOs = new ArrayList<>();
+        studentEntities.forEach(studentEntity -> {
+            StudentDTO studentDTO = mapper.map(studentEntity, StudentDTO.class);
+            studentDTOs.add(studentDTO);
+        });
+        return studentDTOs;
+
     }
 
     @Override
-    public List<StudentDTO> getStudentsByName(String name) {
-        return List.of();
+    public StudentDTO getStudentsById(Integer id) {
+
+        StudentEntity studentEntity = repository.findById(id).get();
+        StudentDTO studentDTO = mapper.map(studentEntity, StudentDTO.class);
+        return studentDTO;
+
     }
+
+
 }

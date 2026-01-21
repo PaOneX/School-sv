@@ -1,6 +1,7 @@
 package edu.icet.service;
 
 import edu.icet.dto.StudentDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,5 +11,5 @@ public interface StudentService {
     void updateStudent(StudentDTO studentDTO);
     void deleteStudent(Integer id);
     List<StudentDTO> getStudents();
-    List<StudentDTO> getStudentsByName(String name);
+    StudentDTO getStudentsById(Integer id);
 }
