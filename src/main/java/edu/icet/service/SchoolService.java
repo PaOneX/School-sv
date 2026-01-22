@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface SchoolService {
 
-    void addSchool(SchoolService schoolService);
-    void updateSchool(SchoolService schoolService);
-    void searchSchool(Integer id);
+    void addSchool(SchoolDTO schoolDTO);
+    void updateSchool(SchoolDTO schoolDTO);
+    void deleteSchool(Integer id);
     List<SchoolDTO> getAllSchools();
     SchoolDTO searchByName(String name);
 }
