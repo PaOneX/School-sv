@@ -17,21 +17,21 @@ public class StudentController {
     final RestTemplate restTemplate;
     final StudentService studentService;
 
-    @GetMapping("/get-todo/{id}")
-    public ToDo getToDo(@PathVariable Integer id){
-        String url = "https://dummyjson.com/quotes/"+id;
-
-        ToDo forObject = restTemplate.getForObject(url, ToDo.class);
-        return forObject;
-    }
-
-    @GetMapping("/get-todo")
-    public ToDo[] getTodos(){
-        String url = "https://dummyjson.com/quotes/";
-
-        ToDo[] forObject = restTemplate.getForObject(url, ToDo[].class);
-        return forObject;
-    }
+//    @GetMapping("/get-todo/{id}")
+//    public ToDo getToDo(@PathVariable Integer id){
+//        String url = "https://dummyjson.com/quotes/"+id;
+//
+//        ToDo forObject = restTemplate.getForObject(url, ToDo.class);
+//        return forObject;
+//    }
+//
+//    @GetMapping("/get-todo")
+//    public ToDo[] getTodos(){
+//        String url = "https://dummyjson.com/quotes/";
+//
+//        ToDo[] forObject = restTemplate.getForObject(url, ToDo[].class);
+//        return forObject;
+//    }
 
     @PostMapping("/add")
     public void addStudent(@RequestBody StudentDTO studentDTO) {
