@@ -29,10 +29,10 @@ public class SchoolController {
         schoolService.deleteSchool(id);
     }
 
-//    @GetMapping("/search/{id}")
-//    public SchoolDTO searchStudent(@PathVariable Integer id) {
-//        return schoolService.getAllSchools(id);
-//    }
+    @GetMapping("/search/{name}")
+    public SchoolDTO searchSchool(@PathVariable String name) {
+        return schoolService.searchByName(name);
+    }
 
     @GetMapping("/getAll-school")
     public List<SchoolDTO> getAllStudents() {

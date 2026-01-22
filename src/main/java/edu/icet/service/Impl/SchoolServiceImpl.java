@@ -46,8 +46,12 @@ public class SchoolServiceImpl implements SchoolService {
 
     }
 
-    @Override
+
+@Override
     public SchoolDTO searchByName(String name) {
-        return null;
+        SchoolEntity schoolEntity = schoolRepository.findBySchoolNameContainingIgnoreCase(name);
+
+        return modelMapper.map(schoolEntity, SchoolDTO.class);
     }
+
 }
