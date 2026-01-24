@@ -18,7 +18,7 @@ import lombok.ToString;
 @ToString
 public class TeacherEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
     private String name;
     private Gender gender;
