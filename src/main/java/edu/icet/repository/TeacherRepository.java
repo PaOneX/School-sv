@@ -4,4 +4,5 @@ import edu.icet.entity.TeacherEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeacherRepository extends JpaRepository<TeacherEntity,Integer> {
+    TeacherEntity  getTeacherByName(String name);
 }
