@@ -2,6 +2,7 @@ package edu.icet.service.Impl;
 
 import edu.icet.dto.StudentDTO;
 import edu.icet.dto.TeacherDTO;
+import edu.icet.entity.SchoolEntity;
 import edu.icet.entity.TeacherEntity;
 import edu.icet.repository.TeacherRepository;
 import edu.icet.service.StudentService;
@@ -10,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,6 +45,12 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public List<TeacherDTO> getAllTeachers() {
-        return List.of();
+        List<TeacherEntity> teacherEntities = teacherRepository.findAll();
+        ArrayList<TeacherDTO> teacherDTOs = new ArrayList<>();
+        teacherEntities.forEach(TeacherEntity->{
+            TeacherDTO teacherDTO=  modelMapper.map(TeacherEntity, TeacherDTO.class);
+            teacherDTOs.add(teacherDTO);
+        });
+        return teacherDTOs;
     }
 }
