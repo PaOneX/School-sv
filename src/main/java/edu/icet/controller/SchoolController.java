@@ -29,7 +29,7 @@ public class SchoolController {
         schoolService.deleteSchool(id);
     }
 
-    @GetMapping("/search/{name}")
+    @GetMapping("/schools/search/{name}")
     public SchoolDTO searchSchool(@PathVariable String name) {
         return schoolService.searchByName(name);
     }
