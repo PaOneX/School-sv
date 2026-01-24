@@ -3,6 +3,9 @@ package edu.icet.entity;
 import edu.icet.util.City;
 import edu.icet.util.Gender;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +16,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class TeacherEntity {   private  Integer id;
+public class TeacherEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private  Integer id;
     private String name;
     private Gender gender;
     private City city;

@@ -7,7 +7,7 @@ import java.util.List;
 public interface TeacherService {
     void addTeacher(TeacherDTO teacherDTO);
     void updateTeacher(TeacherDTO teacherDTO);
-    void deleteTeacher(String id);
+    void deleteTeacher(Integer id);
     TeacherDTO getTeacherByName(String name);
     List<TeacherDTO>  getAllTeachers();
 
