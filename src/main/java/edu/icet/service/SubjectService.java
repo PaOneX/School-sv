@@ -10,6 +10,6 @@ public interface SubjectService {
     void deleteSubject(Integer id);
     List<SubjectDTO> getAllSubjects();
     SubjectDTO getSubjectById(Integer id);
-    SubjectDTO getSubjectByNmae(String name);
+    SubjectDTO getSubjectByName(String name);
 
 }
