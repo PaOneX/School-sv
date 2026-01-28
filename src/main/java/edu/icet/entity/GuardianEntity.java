@@ -18,7 +18,7 @@ public class GuardianEntity {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String First_name;
-    private String Last_name;
+    private String firstNname;
+    private String lastName;
 
 }

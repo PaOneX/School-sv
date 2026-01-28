@@ -11,6 +11,6 @@ import lombok.ToString;
 @ToString
 public class GuardianDTO {
     private Integer id;
-    private String First_name;
-    private String Last_name;
+    private String firstNname;
+    private String lastName;
 }
