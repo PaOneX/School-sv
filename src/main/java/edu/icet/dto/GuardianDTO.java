@@ -10,8 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class GuardianDTO {
-    private String id;
+    private Integer id;
     private String First_name;
     private String Last_name;
-
 }

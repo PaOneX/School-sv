@@ -17,7 +17,7 @@ import lombok.ToString;
 public class GuardianEntity {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
     private String First_name;
     private String Last_name;
 
